@@ -7,75 +7,99 @@
     <title>Charcoal Creations</title>
     <style>
         .banner {
-            background-color: #4CAF50;
-            color: white;
+            background-color: rgb(240,240,240);
+            color: rgb(240,240,240);
             text-align: center;
-            /* padding: 5em; */
             font-size: 1.5em;
             position: relative;
+            box-shadow: 0px 5px 8px black;
+        }
+        @media screen and (max-width: 800px) {
+            .banner {
+                font-size: 3vw;
+            }
         }
         .banner-text {
             position: absolute;
-            top: 10%;
+            width: 100%;
+            top: 15%;
             left: 50%;
             transform: translate(-50%, -50%);
             margin: 0;
             z-index: 1;
+            text-shadow: 0px 5px 4px black;
         }
         .full-height {
             height: 98vh;
             max-width: 1200px;
             margin: 0 auto;
             background-color: whitesmoke;
-            position: relative;
             overflow: hidden;
-
+            position: relative;
         }
         .example-container {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding-top: 5em;
+            padding-top: 3em;
+            height: fit-content;
         }
-        .abt-us-container {
+        @media screen and (max-width: 800px) {
+            .example-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .example-a, .example-b {
+                width: 100vw;
+                margin-top: 10%;
+            }
+        }
+        .abt-us-grid {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             margin-top: 2vh;
-            height: 100%;
+        }
+        .abt-us-container {
+            display: block;
             background-color: rgb(10,10,10);
+            position: absolute;
+            bottom: 0;
         }
         .abt-us-a, .abt-us-b, .abt-us-c {
             height: auto;
             width: 33vw;
             max-width: 400px;
-            max-height: 250px;
+            height: 230px;
             background-color: rgb(10,10,10);
             color: rgb(240,240,240);
-            font-size: large;
+            font-size: calc(40% + 0.8vw);
             text-align: center;
-            overflow-y: scroll;
-            scrollbar-width:none;
-            padding: 1em;
+            overflow: hidden;
+            padding-left: 3%;
+            padding-right: 3%;
+        }
+        @media screen and (min-width: 1200px) {
+            .abt-us-a, .abt-us-b, .abt-us-c {
+                font-size: 100%;
+            }
         }
         .example-a, .example-b {
-            height: 30vw;
             width: 45vw;
             max-width: 450px;
-            max-height: 350px;
-            margin: 3em;
+            margin: 2%;
             background-color: lightblue;
         }
         .banner-image{
-            width: 50%; 
-            height: 50%; 
+            max-width: 100%;
+            display:flex;
             top: 0; 
             left: 0; 
             z-index: -1;
         }
         .note{
             position: absolute;
-            bottom: 0;
+            bottom: 0%;
             background-color: white;
             max-width: 1200px;
             width: 100%;
@@ -87,29 +111,30 @@
 <body style="background-color: rgb(20, 20, 20);">
     <div class="full-height">
         <div class="banner">
-            <img class="banner-image" alt="Banner Image" src="Banner.jpg">
+            <img class="banner-image" alt="Banner Image" src="Banner-combo.png">
             <h1 class="banner-text">Charcoal Creations</h1>
         </div>
         <div class="example-container">
             <img class="example-a" alt="Example A" src="Screenshot_A.png">
             <img class="example-b" alt="Example B" src="Screenshot_B.jpg">
         </div>
-
         <div class="abt-us-container">
-            <div class="abt-us-a">
-                <h1>About Us</h1>
-                <p>We specialize in hand-drawn custom charcoal art that captures the perfect natural scenery for you. Our artworks range from $20 to $50 and are completed and delivered within 2 to 10 weeks, depending on the requested level of detail.</p>
+            <div class="abt-us-grid">
+                <div class="abt-us-a">
+                    <h1>About Us</h1>
+                    <p>We specialize in hand-drawn custom charcoal art that captures the perfect natural scenery for you. Our artworks range from $20 to $50 and are completed and delivered within 2 to 10 weeks, depending on the requested level of detail.</p>
+                </div>
+                <div class="abt-us-b">
+                    <h1>Donations</h1>
+                    <p>Additionally, 10% of our proceeds are donated to one of two oragnizations of your choice; the Audubon society and .... We believe in contributing to global efforts aimed at creating a better world with each purchase.</p>
+                </div>
+                <div class="abt-us-c">
+                    <h1>How to request</h1>
+                    <p>If you'd like to order an art piece, please send an email to <bold>charcoalcreations@proton.me.</bold> In the email describe the basics of what you're looking for and then we can discuss details and pricing.</p>
+                </div>
             </div>
-            <div class="abt-us-b">
-                <h1>Donations</h1>
-                <p>Additionally, 10% of our proceeds are donated to one of two oragnizations of your choice; the Audubon society and .... We believe in contributing to global efforts aimed at creating a better world with each purchase.</p>
-            </div>
-            <div class="abt-us-c">
-                <h1>How to request</h1>
-                <p>If you'd like to order an art piece, please send an email to <bold>charcoalcreations@proton.me.</bold> In the email describe the basics of what you're looking for and then we can discuss details and pricing.</p>
-            </div>
+            <div class="note">Please note that all requested drawings must meet the criteria of plants, nature scenes, reptiles, and dinosaurs.</div>
         </div>
-        <div class="note">Please note that all requested drawings must meet the criteria of plants, nature scenes, reptiles, and dinosaurs.</div>
     </div>
 </body>
 
